@@ -1,23 +1,50 @@
 #include <iostream>
 using namespace std;
+//program konversi dari meter ke inci dan kaki
+
+//Definisikan fungsi mil() untuk mengalikan nilai varray
+//menggunakan argumen berupa pointer
+void mil(double*  aptr)
+{
+//Gunakan perulangan untuk mengalikan semua nilai varray
+for(int i=0;i<5;i++)
+    {
+    //Perhitungan konversi meter ke mil
+    *aptr = 39.3701;     //Gunakan aptr sebagai pointer array 
+    }
+}
+
 int main()
 {
+//Tuliskan Prototype
+void kaki(double*);
+double varray[5] = { 0.1,1,10,100,1000 };
+double panjang;
+double arr;
 
-char arr[5] ={'S','U','P','E','R'}; //definisikan isi dari arr sesuai dengan contoh output program di soal
-//Deklarasikan ptr sebagai pointer
-char* ptr;
-//Definiskan ptr menunjuk ke arr
-ptr=arr;
-//Tuliskan program sesuai output baris 1-3 pada soal
-cout<<"Nilai array ke 0: "<<ptr[0]<<endl;
-cout<<"Nilai array ke 2: "<<ptr[2]<<endl;
-cout<<"Nilai array ke 4: "<<ptr[4]<<endl;
-//Gunakan perulangan, pointer, dan array untuk mengakses semua nilai arr
+cout<<"Konversi meter ke kaki"<<endl;
+//Masukan nilai panjang dalam meter untuk dikonversi ke kaki, Gunakan variabel panjang
+cout<<"Input panjang dalam meter: ";
+cin>>panjang;
+//Deklarasikan fungsi kaki() dengan variabel panjang sebagai argument untuk dilewatkan ke variabel pointer PTR
+kaki(&panjang);
+//tuliskan program untuk menampilkan hasil konversi 
+cout<<"Hasil konversi:"<<" "<<panjang<<" kaki"<<endl;
+
+cout<<"\nKonversi meter ke mil"<<endl;
+//Deklarasikan fungsi mil() dengan variabel varray sebagai argument 
+mil (&arr);
+//Gunakan perulangan untuk menampilkan hasil konversi varray
 for(int i=0;i<5;i++)
 {
-    cout<<"Array ke-"<<i+1<<": "<<*(ptr+i)<<endl;
+cout<<"Data ke-"<<i+1<<"= "<<varray[i]*arr<<" mil"<<endl;
 }
 return 0;
 }
-
-
+//--------------------------------------------------------------
+//Definisikan fungsi kaki() dengan argumen berupa pointer PTR
+void kaki(double* PTR)
+{
+//perhitungan konversi meter ke kaki
+    *PTR *= 3.28;   //Gunakan PTR sebagai variabel pointer untuk dikalikan
+}
